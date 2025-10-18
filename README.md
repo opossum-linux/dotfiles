@@ -1,4 +1,14 @@
 opossum's shit dotlifes
+installing everything that i use in one command
+sudo pacman -S neovim mpv kitty nwg-look qutebrowser firefox obsidian foliate transmission yazi fish dunst flameshot timeshift transmission-gtk bluetui pipewire-pulse pipewire 
+
+installing paru
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+
+paru -S yacreader-bin vesktop-bin waypaper mangowc
 
 okay here's what i use with explanation why
 
