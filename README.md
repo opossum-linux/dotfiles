@@ -22,3 +22,8 @@ okay here's what i use with explanation why
 
 {mpv} the best without any competition
 
+{wofi} best what i found without figureing out how to spawn terminal's
+
+{nwg-look} best way to configure gtk themes on wm
+
+
