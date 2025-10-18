@@ -1,0 +1,12 @@
+[plugin]
+deps = []
+
+[[flavor.deps]]
+use = "Chromium-3-Oxide/everforest-medium"
+rev = "0158f0f"
+hash = "dbbbfe681e156c28303efb1f44b6cbc4"
+
+[[flavor.deps]]
+use = "Mintass/rose-pine"
+rev = "8343340"
+hash = "e2336631865c0f90276dcbc553d532fc"
