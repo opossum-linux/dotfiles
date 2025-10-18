@@ -1,6 +1,8 @@
 opossum's shit dotlifes
+
 installing everything that i use in one command
-sudo pacman -S neovim mpv kitty nwg-look qutebrowser firefox obsidian foliate transmission yazi fish dunst flameshot timeshift transmission-gtk bluetui pipewire-pulse pipewire 
+
+sudo pacman -S neovim mpv kitty nwg-look qutebrowser firefox obsidian foliate transmission yazi fish dunst flameshot timeshift transmission-gtk bluetui pipewire-pulse pipewire ttf-cascadia-mono-nerd
 
 installing paru
 sudo pacman -S --needed base-devel
@@ -8,7 +10,9 @@ git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 
-paru -S yacreader-bin vesktop-bin waypaper mangowc
+paru -S yacreader-bin vesktop-bin waypaper mangowc rose-pine-cursor
+
+(download rose-pine theme from gnome-look because in aur and github it's broken)
 
 okay here's what i use with explanation why
 
