@@ -190,6 +190,17 @@ bindsym $mod+End exec brightnessctl set 10%-
 ## Printscreen
 bindsym	Print exec flameshot gui
 
+set $bg-color #2B2B2B
+set $fg-color #D7D7D7
+set $highlight-color #4F4B49
+
+client.focused              $highlight-color $bg-color $fg-color
+client.unfocused            $bg-color $bg-color $fg-color
+client.placeholder          $bg-color $highlight-color $fg-color
+
 exec wlsunset
 include @sysconfdir@/sway/config.d/*
-include ~/.config/sway/conthemefig
+
+set $bg-color #2B2B2B
+set $fg-color #D7D7D7
+set $highlight-color #4F4B49
