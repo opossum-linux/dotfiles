@@ -10,7 +10,7 @@ git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 
-paru -S yacreader-bin vesktop-bin waypaper mangowc rose-pine-cursor
+paru -S yacreader-bin vesktop-bin waypaper mangowc rose-pine-cursor anki 
 
 (download rose-pine theme from gnome-look because in aur and github it's broken)
 
