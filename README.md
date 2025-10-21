@@ -18,6 +18,8 @@ okay here's what i use with explanation why
 
 {mangowc} because it's hyprland for coolest tech kids
 
+{sway} i love i3 too much i hate default layout but
+
 {kitty} shows picture out of the box witch solves some problems with ranger and yazi + kitten command is super conviniant
 
 {waypapers} cool wallpaper program sucks only because it's gui
