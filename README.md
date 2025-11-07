@@ -2,7 +2,7 @@ opossum's shit dotlifes
 
 installing everything that i use in one command
 
-sudo pacman -S neovim mpv kitty nwg-look qutebrowser firefox obsidian foliate transmission yazi fish dunst flameshot timeshift transmission-gtk bluetui pipewire-pulse pipewire ttf-cascadia-mono-nerd git
+sudo pacman -S helix mpv kitty nwg-look qutebrowser librewolf obsidian foliate transmission yazi fish dunst flameshot timeshift transmission-gtk bluetui pipewire-pulse pipewire ttf-cascadia-mono-nerd git thunar picom yt-dlp
 
 installing paru
 
@@ -12,21 +12,25 @@ cd paru
 
 makepkg -si
 
-paru -S yacreader-bin vesktop-bin waypaper mangowc rose-pine-cursor anki 
-
-(download rose-pine theme from gnome-look because in aur and github it's broken)
+paru -S mcomix vesktop-bin mangowc anki gruvbox-material-gtk-theme-git youtube-tui-full-bin
 
 okay here's what i use with explanation why
 
+{youtube-tui} LET'S GOOOOOOO
+
 {mangowc} because it's hyprland for coolest tech kids
 
-{sway} i love i3 too much i hate default layout but
+{sway} sucks but i need to neil my gaming 
+
+{i3} goated but for power users use awesome seriusly
+
+{picom} the best thing that exist mostly 
 
 {kitty} shows picture out of the box witch solves some problems with ranger and yazi + kitten command is super conviniant
 
-{waypapers} cool wallpaper program sucks only because it's gui
-
 {bluetui} bluetooth but cooler
+
+{thunar} i hate it but i have to intill i fix that with yazi plugin
 
 {yazi} file manager
 
@@ -40,7 +44,7 @@ okay here's what i use with explanation why
 
 {mpv} the best without any competition
 
-{wofi} best what i found without figureing out how to spawn terminal's
+{dmenu-rofi-with-dmenu-theme} i'm gay
 
 {nwg-look} best way to configure gtk themes on wm
 
