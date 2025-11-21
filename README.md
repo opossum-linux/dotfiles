@@ -1,8 +1,14 @@
 opossum's shit dotlifes
+<img width="1916" height="1079" alt="2025-11-21_22-04_1" src="https://github.com/user-attachments/assets/860e4a41-9691-4fda-8c65-069aa2351acd" />
+
+<img width="1912" height="1073" alt="2025-11-21_22-04" src="https://github.com/user-attachments/assets/f9affc49-1a6b-4a83-8d95-a87bfbbd8508" />
+
+
+
 
 installing everything that i use in one command
 
-sudo pacman -S helix mpv kitty nwg-look qutebrowser librewolf obsidian foliate transmission yazi fish dunst flameshot timeshift transmission-gtk bluetui pipewire-pulse pipewire ttf-cascadia-mono-nerd git thunar picom yt-dlp
+sudo pacman -S helix mpv kitty nwg-look qutebrowser librewolf obsidian foliate transmission yazi fish dunst flameshot timeshift transmission-gtk bluetui pipewire-pulse pipewire nerd-fonts git nautilus picom yt-dlp python-pywal rmpc mpd rofi
 
 installing paru
 
