@@ -12,109 +12,67 @@
 
 # Change the argument to True to still load settings configured via autoconfig.yml
 config.load_autoconfig(False)
-
-# Always restore open sites when qutebrowser is reopened. Without this
-# option set, `:wq` (`:quit --save`) needs to be used to save open tabs
-# (and restore them), while quitting qutebrowser in any other way will
-# not save/restore the session. By default, this will save to the
-# session which was last loaded. This behavior can be customized via the
-# `session.default_name` setting.
-# Type: Bool
 c.auto_save.session = True
 
 # Automatically start playing `<video>` elements.
 # Type: Bool
 c.content.autoplay = False
 
+# pywal inplementation
+import pywalQute.draw
 
+config.load_autoconfig()
 
-config.source("everblush.py")
+pywalQute.draw.color(c, {
+    'spacing': {
+        'vertical': 6,
+        'horizontal': 8
+    }
+})
 
-# Which cookies to accept. With QtWebEngine, this setting also controls
-# other features with tracking capabilities similar to those of cookies;
-# including IndexedDB, DOM storage, filesystem API, service workers, and
-# AppCache. Note that with QtWebKit, only `all` and `never` are
-# supported as per-domain values. Setting `no-3rdparty` or `no-
-# unknown-3rdparty` per-domain on QtWebKit will have the same effect as
-# `all`. If this setting is used with URL patterns, the pattern gets
-# applied to the origin/first party URL of the page making the request,
-# not the request URL. With QtWebEngine 5.15.0+, paths will be stripped
-# from URLs, so URL patterns using paths will not match. With
-# QtWebEngine 5.15.2+, subdomains are additionally stripped as well, so
-# you will typically need to set this setting for `example.com` when the
-# cookie is set on `somesubdomain.example.com` for it to work properly.
-# To debug issues with this setting, start qutebrowser with `--debug
-# --logfilter network --debug-flag log-cookies` which will show all
-# cookies being set.
-# Type: String
-# Valid values:
-#   - all: Accept all cookies.
-#   - no-3rdparty: Accept cookies from the same origin only. This is known to break some sites, such as GMail.
-#   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain. On QtWebEngine, this is the same as no-3rdparty.
-#   - never: Don't accept cookies at all.
+#vibe coded youtube blocker not as reliable as cutting off internet but yeah
+import os
+
+youtube_hosts = [
+
+    "www.youtube.com","youtube.com","m.youtube.com","gaming.youtube.com",
+    "music.youtube.com","youtu.be","s.ytimg.com","ytimg.com",
+    "youtube-nocookie.com","googlevideo.com","youtube.googleapis.com",
+    "yt3.ggpht.com","www.youtube-nocookie.com",
+]
+
+# global defaults (optional)
+c.content.blocking.enabled = True
+c.content.blocking.method = "hosts"
+c.content.blocking.hosts.block_subdomains = True
+
+# per-host patterns via config.set
+for host in youtube_hosts:
+    pattern = f"https://{host}/*"
+    config.set("content.javascript.enabled", False, pattern)
+    config.set("content.images", False, pattern)
+    config.set("content.autoplay", False, pattern)
+    config.set("content.cookies.accept", "no-3rdparty", pattern)
+    config.set("content.plugins", False, pattern)
+
+# create hosts-style list for host blocker
+hosts_file = os.path.expanduser("~/.config/qutebrowser/youtube-hosts.txt")
+with open(hosts_file, "w") as f:
+    for h in youtube_hosts:
+        f.write("0.0.0.0 {}\n".format(h))
+c.content.blocking.hosts.lists = [ "file://" + hosts_file ]
+
 config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
 
-# Which cookies to accept. With QtWebEngine, this setting also controls
-# other features with tracking capabilities similar to those of cookies;
-# including IndexedDB, DOM storage, filesystem API, service workers, and
-# AppCache. Note that with QtWebKit, only `all` and `never` are
-# supported as per-domain values. Setting `no-3rdparty` or `no-
-# unknown-3rdparty` per-domain on QtWebKit will have the same effect as
-# `all`. If this setting is used with URL patterns, the pattern gets
-# applied to the origin/first party URL of the page making the request,
-# not the request URL. With QtWebEngine 5.15.0+, paths will be stripped
-# from URLs, so URL patterns using paths will not match. With
-# QtWebEngine 5.15.2+, subdomains are additionally stripped as well, so
-# you will typically need to set this setting for `example.com` when the
-# cookie is set on `somesubdomain.example.com` for it to work properly.
-# To debug issues with this setting, start qutebrowser with `--debug
-# --logfilter network --debug-flag log-cookies` which will show all
-# cookies being set.
-# Type: String
-# Valid values:
-#   - all: Accept all cookies.
-#   - no-3rdparty: Accept cookies from the same origin only. This is known to break some sites, such as GMail.
-#   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain. On QtWebEngine, this is the same as no-3rdparty.
-#   - never: Don't accept cookies at all.
 config.set('content.cookies.accept', 'all', 'devtools://*')
 
-# Value to send in the `Accept-Language` header. Note that the value
-# read from JavaScript is always the global value.
-# Type: String
+
 config.set('content.headers.accept_language', '', 'https://matchmaker.krunker.io/*')
 
-# User agent to send.  The following placeholders are defined:  *
-# `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
-# The underlying WebKit version (set to a fixed value   with
-# QtWebEngine). * `{qt_key}`: "Qt" for QtWebKit, "QtWebEngine" for
-# QtWebEngine. * `{qt_version}`: The underlying Qt version. *
-# `{upstream_browser_key}`: "Version" for QtWebKit, "Chrome" for
-# QtWebEngine. * `{upstream_browser_version}`: The corresponding
-# Safari/Chrome version. * `{upstream_browser_version_short}`: The
-# corresponding Safari/Chrome   version, but only with its major
-# version. * `{qutebrowser_version}`: The currently running qutebrowser
-# version.  The default value is equal to the default user agent of
-# QtWebKit/QtWebEngine, but with the `QtWebEngine/...` part removed for
-# increased compatibility.  Note that the value read from JavaScript is
-# always the global value.
-# Type: FormatString
+
 config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:144.0) Gecko/20100101 Firefox/144.0', 'https://accounts.google.com/*')
 
-# User agent to send.  The following placeholders are defined:  *
-# `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
-# The underlying WebKit version (set to a fixed value   with
-# QtWebEngine). * `{qt_key}`: "Qt" for QtWebKit, "QtWebEngine" for
-# QtWebEngine. * `{qt_version}`: The underlying Qt version. *
-# `{upstream_browser_key}`: "Version" for QtWebKit, "Chrome" for
-# QtWebEngine. * `{upstream_browser_version}`: The corresponding
-# Safari/Chrome version. * `{upstream_browser_version_short}`: The
-# corresponding Safari/Chrome   version, but only with its major
-# version. * `{qutebrowser_version}`: The currently running qutebrowser
-# version.  The default value is equal to the default user agent of
-# QtWebKit/QtWebEngine, but with the `QtWebEngine/...` part removed for
-# increased compatibility.  Note that the value read from JavaScript is
-# always the global value.
-# Type: FormatString
+
 config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {qt_key}/{qt_version} {upstream_browser_key}/{upstream_browser_version_short} Safari/{webkit_version}', 'https://gitlab.gnome.org/*')
 
 # Load images automatically in web pages.
@@ -155,11 +113,11 @@ c.content.plugins = True
 
 # List of user stylesheet filenames to use.
 # Type: List of File, or File
-c.content.user_stylesheets = '/home/opossum/.config/qutebrowser/youtube-no-margin.css'
+c.content.user_stylesheets = "/home/opossum/.config/qutebrowser/youtube-no-margin.css"
 
 # Height (in pixels or as percentage of the window) of the completion.
 # Type: PercOrInt
-c.completion.height = '20%'
+c.completion.height = '25%'
 
 # When to show the autocompletion window.
 # Type: String
@@ -167,27 +125,18 @@ c.completion.height = '20%'
 #   - always: Whenever a completion is available.
 #   - auto: Whenever a completion is requested.
 #   - never: Never.
-c.completion.show = 'auto'
+c.completion.show = 'always'
 
 # Execute the best-matching command on a partial match.
 # Type: Bool
 c.completion.use_best_match = True
-
-# Directory to save downloads to. If unset, a sensible OS-specific
-# default is used.
-# Type: Directory
 c.downloads.location.directory = None
 
-# Where to show the downloaded files.
-# Type: VerticalPosition
-# Valid values:
-#   - top
-#   - bottom
 c.downloads.position = 'bottom'
 
 # CSS border value for hints.
 # Type: String
-c.hints.border = '0px solid black'
+c.hints.border = '1px solid black'
 
 # Hide unmatched hints in rapid mode.
 # Type: Bool
@@ -200,7 +149,7 @@ c.hints.hide_unmatched_rapid_hints = False
 #   - never: Never show the scrollbar.
 #   - when-searching: Show the scrollbar when searching for text in the webpage. With the QtWebKit backend, this is equal to `never`.
 #   - overlay: Show an overlay scrollbar. On macOS, this is unavailable and equal to `when-searching`; with the QtWebKit backend, this is equal to `never`. Enabling/disabling overlay scrollbars requires a restart.
-c.scrolling.bar = 'never'
+c.scrolling.bar = 'overlay'
 
 # Enable smooth scrolling for web pages. Note smooth scrolling does not
 # work with the `:scroll-px` command.
@@ -219,20 +168,7 @@ c.statusbar.show = 'always'
 # Type: Bool
 c.tabs.background = False
 
-# Scaling factor for favicons in the tab bar. The tab size is unchanged,
-# so big favicons also require extra `tabs.padding`.
-# Type: Float
 c.tabs.favicons.scale = 0.8
-
-# When to show favicons in the tab bar. When switching this from never
-# to always/pinned, note that favicons might not be loaded yet, thus
-# tabs might require a reload to display them.
-# Type: String
-# Valid values:
-#   - always: Always show favicons.
-#   - never: Always hide favicons.
-#   - pinned: Show favicons only on pinned tabs.
-c.tabs.favicons.show = 'never'
 
 # Alignment of the text inside of tabs.
 # Type: TextAlignment
@@ -240,7 +176,7 @@ c.tabs.favicons.show = 'never'
 #   - left
 #   - right
 #   - center
-c.tabs.title.alignment = 'left'
+c.tabs.title.alignment = 'center'
 
 # Position of ellipsis in truncated title of tabs.
 # Type: ElidePosition
@@ -254,7 +190,7 @@ c.tabs.title.elide = 'none'
 # Width (in pixels or as percentage of the window) of the tab bar if
 # it's vertical.
 # Type: PercOrInt
-c.tabs.width = '15%'
+c.tabs.width = '10%'
 
 # Minimum width (in pixels) of tabs (-1 for the default minimum size
 # behavior). This setting only applies when tabs are horizontal. This
@@ -265,7 +201,7 @@ c.tabs.min_width = -1
 
 # Width (in pixels) of the progress indicator (0 to disable).
 # Type: Int
-c.tabs.indicator.width = 1
+c.tabs.indicator.width = 0
 
 # Wrap when changing tabs.
 # Type: Bool
@@ -296,7 +232,7 @@ c.url.start_pages = 'https://www.startpage.com'
 # Hide the window decoration.  This setting requires a restart on
 # Wayland.
 # Type: Bool
-c.window.hide_decoration = True
+c.window.hide_decoration = False
 
 # Set the main window background to transparent.  This allows having a
 # transparent tab- or statusbar (might require a compositor such as
@@ -346,7 +282,7 @@ c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 #   - never: Never apply dark mode filter to any images.
 #   - smart: Apply dark mode based on image content. Not available with Qt 5.15.0.
 #   - smart-simple: On QtWebEngine 6.6, use a simpler algorithm for smart mode (based on numbers of colors and transparency), rather than an ML-based model. Same as 'smart' on older QtWebEnigne versions.
-c.colors.webpage.darkmode.policy.images = 'smart'
+c.colors.webpage.darkmode.policy.images = 'never'
 
 # Default font size to use. Whenever "default_size" is used in a font
 # setting, it's replaced with the size listed here. Valid values are
@@ -354,11 +290,12 @@ c.colors.webpage.darkmode.policy.images = 'smart'
 # "px" suffix.
 # Type: String
 c.fonts.default_size = '12pt'
+c.fonts.web.size.default = 13
+c.tabs.title.format = "{audio}{current_title}"
 
-# Bindings for normal mode
+# custom keybindigs will change them later (from distrotube conf)
 config.bind('xb', 'config-cycle statusbar.show always never')
 config.bind('xt', 'config-cycle tabs.show always never')
 config.bind('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
 config.bind('xm', 'hint links spawn mpv {hint-url}')
 config.bind('Z', 'hint links spawn st -e youtube-dl {hint-url}')
-
