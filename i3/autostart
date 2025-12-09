@@ -1,0 +1,9 @@
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec wal -R
+exec xclip
+exec --no-startup-id xset r rate 200 40
+exec --no-startup-id "xrandr --output HDMI-A-0 --mode 1920x1080 --rate 165"
+exec_always autotiling -w 1 2 3 4 5
+exec --no-startup-id dunst
+exec --no-startup-id picom 
+exec clutter --timeout 4

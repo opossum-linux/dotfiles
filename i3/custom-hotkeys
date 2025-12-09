@@ -1,0 +1,7 @@
+bindsym $alt+r exec kitty -e rmpc
+bindsym $alt+o exec obsidian
+bindsym $alt+w exec kitty -e yazi ~/Wallpapers
+bindsym $alt+p exec kitty -e yazi ~/.config
+bindsym $alt+g exec --no-startup-id kitty -e calcurse
+bindsym $alt+e exec --no-startup-id kitty -e yazi
+bindsym Print exec flameshot gui
