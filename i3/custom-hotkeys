@@ -5,3 +5,4 @@ bindsym $alt+p exec kitty -e yazi ~/.config
 bindsym $alt+g exec --no-startup-id kitty -e calcurse
 bindsym $alt+e exec --no-startup-id kitty -e yazi
 bindsym Print exec flameshot gui
+bindsym $alt+q exec qutebrowser
