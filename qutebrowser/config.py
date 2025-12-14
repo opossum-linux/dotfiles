@@ -30,6 +30,32 @@ pywalQute.draw.color(c, {
     }
 })
 
+# remap normal-mode navigation: j=left, k=down, l=up, ;=right
+config.bind('j', 'scroll left')
+config.bind('k', 'scroll down')
+config.bind('l', 'scroll up')
+config.bind(';', 'scroll right')
+
+# remap caret / selection mode (if you use caret mode like v)
+config.bind('j', 'move-to-prev-spelling', mode='caret', )  # example placeholder
+# Better: explicitly bind caret-nav commands you use, e.g.:
+config.bind('j', 'caret-left', mode='caret')
+config.bind('k', 'caret-down', mode='caret')
+config.bind('l', 'caret-up', mode='caret')
+config.bind(';', 'caret-right', mode='caret')
+
+# remap history and tab/navigation keys you want (examples)
+config.bind('J', 'back')   # replace default H
+config.bind('L', 'forward')# replace default L
+
+# unbind original hjkl if desired
+config.unbind('h')
+config.unbind('H')
+config.unbind('j', mode='normal')  # if you want to remove defaults first
+config.unbind('k', mode='normal')
+config.unbind('l', mode='normal')
+config.unbind(';', mode='normal')
+
 #vibe coded youtube blocker not as reliable as cutting off internet but yeah
 import os
 
