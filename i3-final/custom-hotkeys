@@ -1,0 +1,9 @@
+#don't really use them since i started using alt as mod key and it's really painful to use win key as a replacement for alt key
+bindsym $alt+r exec kitty -e rmpc
+bindsym $alt+o exec obsidian
+bindsym $alt+w exec kitty -e yazi ~/Wallpapers
+bindsym $alt+p exec kitty -e yazi ~/.config
+bindsym $alt+g exec --no-startup-id kitty -e calcure
+bindsym $alt+e exec --no-startup-id kitty -e yazi
+bindsym Print exec flameshot gui
+bindsym $alt+q exec qutebrowser
