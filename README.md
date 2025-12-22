@@ -8,7 +8,7 @@ opossum's shit dotlifes
 
 installing everything that i use in one command
 
-sudo pacman -S helix mpv kitty nwg-look qutebrowser librewolf obsidian foliate transmission yazi fish dunst flameshot timeshift transmission-gtk bluetui pipewire-pulse pipewire nerd-fonts git nautilus picom yt-dlp python-pywal rmpc mpd rofi
+sudo pacman -S mpv kitty nwg-look qutebrowser firefox obsidian foliate transmission yazi fish dunst flameshot timeshift transmission-qt bluetui pipewire-pulse pipewire nerd-fonts git pcmanfm picom rmpc mpd rofi redshift
 
 installing paru
 
@@ -18,40 +18,39 @@ cd paru
 
 makepkg -si
 
-paru -S mcomix vesktop-bin mangowc anki gruvbox-material-gtk-theme-git youtube-tui-full-bin
+paru -S mcomix vesktop-bin anki 
 
 okay here's what i use with explanation why
 
-{youtube-tui} LET'S GOOOOOOO
+{mangowc} just to play dota 2
 
-{mangowc} because it's hyprland for coolest tech kids
+{sway} unfortunatly sucks
 
-{sway} sucks but i need to neil my gaming 
+{i3} goated but for power users use awesomewm seriusly
 
-{i3} goated but for power users use awesome seriusly
-
-{picom} the best thing that exist mostly 
+{picom} the best thing ever 
 
 {kitty} shows picture out of the box witch solves some problems with ranger and yazi + kitten command is super conviniant
 
 {bluetui} bluetooth but cooler
 
-{thunar} i hate it but i have to intill i fix that with yazi plugin
+{pcmanfm} i hate it but i have to intill i fix that with yazi plugin
 
 {yazi} file manager
 
-{qutebrowser} do i have to explain why?
+{qutebrowser} okay it's goated but lack of userscripts is crucial unless you're an evil wizard who writes in javascript (most evil programming langauge in the universe)
 
 {flameshot} works everywhere that's the reason why i use it
 
-{nvim} we are getting 20% cooler
+{vim} neovim's for weak and javascript coders
 
-{wlsunset} i'm not going outside in tights sorry
+{wlsunset&Redshift} i'm not going outside in tights sorry
 
 {mpv} the best without any competition
 
-{dmenu-rofi-with-dmenu-theme} i'm gay
+{rofi} i use arch btw
 
+{yambar} literally the best bar for wayland there's way better options on x11 such as dwm-bar xmobar awesomebar and that one bar for openbox i forgot it's name
 {nwg-look} best way to configure gtk themes on wm
 
 
