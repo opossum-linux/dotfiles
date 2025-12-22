@@ -42,7 +42,7 @@ okay here's what i use with explanation why
 
 {flameshot} works everywhere that's the reason why i use it
 
-{vim} neovim's for weak and javascript coders
+{vim} neovim's for weak and javascript coders (use it for notes and writing)
 
 {wlsunset&Redshift} i'm not going outside in tights sorry
 
