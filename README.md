@@ -1,8 +1,8 @@
-opossum's shit dotlifes
+opossum's shitty apprentice dotfiles
 
 installing everything that i use in one command
 
-sudo pacman -S mpv kitty nwg-look firefox foliate transmission yazi fish dunst hyprshot timeshift transmission-qt bluetui pipewire-pulse pipewire git rmpc mpd wmenu wl-sunset
+sudo pacman -S mpv kitty nwg-look librewolf foliate yazi fish dunst hyprshot timeshift transmission-qt bluetui pipewire-pulse pipewire git rmpc mpd fuzzel wl-sunset
 
 installing paru
 
@@ -12,7 +12,7 @@ cd paru
 
 makepkg -si
 
-paru -S mcomix legcord anki 
+paru -S mcomix equicord anki 
 
 okay here's what i use with explanation why
 
@@ -32,9 +32,9 @@ okay here's what i use with explanation why
 
 {qutebrowser} okay it's goated but lack of userscripts is crucial unless you're an evil wizard who writes in javascript (most evil programming langauge in the universe)
 
-{firefox} have to use firefox with vimium
+{librewolf} have to use firefox with vimium
 
-{flameshot} works everywhere that's the reason why i use it. btw even works on wayland some people think it doesn't
+{flameshot} works everywhere that's the reason why i use it. btw even works on wayland some people think it doesn't but way more conviniant to use hyprshot and other's
 
 {vim} neovim's for weak and javascript coders (use it for notes and writing)
 
@@ -42,7 +42,8 @@ okay here's what i use with explanation why
 
 {mpv} the best without any competition
 
-{wmenu} don't regret anything
+{fuzzel} i hate customizing rofi so i just stopped doing that and start using application keybindings
+
 {nwg-look} best way to configure gtk themes on wm
 
 
