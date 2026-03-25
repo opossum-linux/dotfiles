@@ -52,6 +52,8 @@ okay here's what i use with explanation why
 
 {discordo&oxicord} too shitty
 
+{zsh} still testing
+
 
 soon updates
 
