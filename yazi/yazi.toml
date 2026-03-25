@@ -48,7 +48,7 @@ l = "cursor_right_select"
 
 [opener]
 edit = [
-	{ run = "${EDITOR:-vim} %s", desc = "$EDITOR",      for = "unix", block = true },
+	{ run = "${EDITOR:-nvim} %s", desc = "$EDITOR",      for = "unix", block = true },
 	{ run = "code %s",          desc = "code",         for = "windows", orphan = true },
 	{ run = "code -w %s",       desc = "code (block)", for = "windows", block = true },
 ]
