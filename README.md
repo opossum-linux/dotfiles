@@ -48,6 +48,11 @@ okay here's what i use with explanation why
 
 {nwg-look} best way to configure fonts on wm
 
+{superseedr} still testing
+
+{discordo&oxicord} too shitty
+
+
 soon updates
 
 1 fonts
