@@ -1,5 +1,7 @@
 opossum's shitty apprentice dotfiles
 
+my setup is build around doing almost everything without a mouse
+
 installing everything that i use in one command
 
 sudo pacman -S mpv kitty nwg-look librewolf foliate yazi zsh dunst flameshot timeshift bluetui pipewire-pulse pipewire git cmus gammastep
@@ -12,7 +14,7 @@ cd paru
 
 makepkg -si
 
-paru -S yacreader-bin equicord anki 
+paru -S yacreader-bin equicord anki superseedr
 
 okay here's what i use with explanation why
 
