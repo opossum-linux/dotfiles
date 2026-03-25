@@ -48,6 +48,12 @@ okay here's what i use with explanation why
 
 {nwg-look} best way to configure fonts on wm
 
+soon updates
+
+1 fonts
+2 software recomendations when will it become viable
+3 wallpapers
+
 
 
 
