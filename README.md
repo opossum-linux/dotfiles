@@ -12,17 +12,17 @@ cd paru
 
 makepkg -si
 
-paru -S mcomix equicord anki 
+paru -S yacreader-bin equicord anki 
 
 okay here's what i use with explanation why
 
-{hyprland} i suck as a human being but at least i don't have to switch between mango
+{hyprland} god bless qtile fuck hyprland
 
 {sway} unfortunatly sucks
 
-{i3} goated but use awesomewm if you go with x11
+{i3} goated but use awesomewm if you go with x11 or leftwm
 
-{picom} the best thing ever made by human being
+{picom} the best thing ever made by human being but only for x11
 
 {kitty} shows picture out of the box witch solves some problems with ranger and yazi + kitten command is super conviniant
 
@@ -32,18 +32,22 @@ okay here's what i use with explanation why
 
 {qutebrowser} okay it's goated but lack of userscripts is crucial unless you're an evil wizard who writes in javascript (most evil programming langauge in the universe)
 
-{librewolf} have to use firefox with vimium
+{librewolf} quite superior since i discovered surfingkeys
 
 {flameshot} works everywhere that's the reason why i use it. btw even works on wayland some people think it doesn't but way more conviniant to use hyprshot and other's
 
 {vim} neovim's for weak and javascript coders (use it for notes and writing)
 
+{neovim} okay i change my mind but i still hate lua
+
 {wlsunset&gammastep+redshift} i'm not going outside in tights sorry
 
 {mpv} the best without any competition
 
-{fuzzel} i hate customizing rofi so i just stopped doing that and start using application keybindings
+{fuzzel} fuck this and rofi god bless qtile-prompt
 
-{nwg-look} best way to configure gtk themes on wm
+{nwg-look} best way to configure fonts on wm
+
+
 
 
