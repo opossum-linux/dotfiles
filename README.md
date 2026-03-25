@@ -2,7 +2,7 @@ opossum's shitty apprentice dotfiles
 
 installing everything that i use in one command
 
-sudo pacman -S mpv kitty nwg-look librewolf foliate yazi fish dunst hyprshot timeshift transmission-qt bluetui pipewire-pulse pipewire git rmpc mpd fuzzel wl-sunset
+sudo pacman -S mpv kitty nwg-look librewolf foliate yazi zsh dunst flameshot timeshift bluetui pipewire-pulse pipewire git cmus gammastep
 
 installing paru
 
